@@ -1,0 +1,81 @@
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio cache/options directory
+.vs/
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Rider
+.idea/
+*.sln.iml
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider IDEs
+.idea/
+.idea_modules/
+*.iml
+*.ipr
+
+# Local environment files
+.env
+.env.local
+.env.*.local
+
+# Build and runtime artifacts
+*.exe
+*.dll
+*.so
+*.dylib
+*.pdb
+*.nupkg
+*.nuspec
+
+# Package manager
+packages/
+.nuget/
+
+# NuGet
+.nuget/
+
+# Temp folders
+tmp/
+temp/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Visual Studio
+.vs/
+.vscode/
+
+# User-specific files
+*.suo
+*.user
+
