@@ -5,10 +5,19 @@
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-    </PropertyGroup>
+      <UserSecretsId>fe8cb824-c76b-4f9d-8bd9-3337c4b2cd55</UserSecretsId>
+  </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.3" />
+      <PackageReference Include="Serilog.Extensions.Hosting" Version="10.0.0" />
+      <PackageReference Include="Serilog.Sinks.Console" Version="6.1.1" />
+      <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ClipFlow.Application\ClipFlow.Application.csproj" />
+      <ProjectReference Include="..\ClipFlow.Infrastructure\ClipFlow.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

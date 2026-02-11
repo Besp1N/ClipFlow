@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ClipFlow.Console": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

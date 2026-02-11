@@ -10,4 +10,8 @@
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.3" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\ClipFlow.Infrastructure\ClipFlow.Infrastructure.csproj" />
+    </ItemGroup>
+
 </Project>
