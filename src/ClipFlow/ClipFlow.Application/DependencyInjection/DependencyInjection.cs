@@ -7,7 +7,8 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {
-        services.AddTransient<DownloadClipAsyncUseCase>();
+        services.AddScoped<DownloadClipAsyncUseCase>();
+        services.AddSingleton<DownloadClipRequestValidator>();
 
         return services;
     }

@@ -37,8 +37,8 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Logging.AddSerilog();
 
-builder.Services.AddSingleton<CliRoot>();
-builder.Services.AddTransient<DownloadClipCommand>();
+builder.Services.AddScoped<CliRoot>();
+builder.Services.AddScoped<DownloadClipCommand>();
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
@@ -46,8 +46,9 @@ builder.Services.AddInfrastructure(builder.Configuration);
 Console.WriteLine($"ENV: {builder.Environment.EnvironmentName}");
 
 using var host = builder.Build();
+using var scope = host.Services.CreateScope();
 
-var router = host.Services.GetRequiredService<CliRoot>();
+var router = scope.ServiceProvider.GetRequiredService<CliRoot>();
 
 var result = await router.RunAsync(args, cts.Token);
 if (result.IsFailure)

@@ -16,6 +16,15 @@ public class DownloadClipCommand(DownloadClipAsyncUseCase downloadClipAsync)
 
         var downloadClipRequest = new DownloadClipRequest(Url: args[1], OutputDirectory: args[outputDirIndex + 1]);
 
-        return await downloadClipAsync.ExecuteAsync(downloadClipRequest, cancellationToken);
+        System.Console.WriteLine($"Downloading clip: {downloadClipRequest.Url}...");
+        var result = await downloadClipAsync.ExecuteAsync(downloadClipRequest, cancellationToken);
+        if (result.IsSuccess)
+        {
+            System.Console.WriteLine($"Download completed successfully. Clip saved to: {downloadClipRequest.OutputDirectory}");
+            return Result.Success();
+        }
+
+        System.Console.WriteLine($"Error downloading clip: {result.ErrorMessage}");
+        return result;
     }
 }

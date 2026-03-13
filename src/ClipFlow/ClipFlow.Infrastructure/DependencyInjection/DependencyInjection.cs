@@ -1,3 +1,5 @@
+using ClipFlow.Application.Abstractions.Download;
+using ClipFlow.Infrastructure.Download;
 using ClipFlow.Infrastructure.Twitch;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,6 +23,9 @@ public static class DependencyInjection
         {
             client.BaseAddress = new Uri("https://api.twitch.tv/helix/");
         });
+
+        services.AddSingleton<YtDlpCommandBuilder>();
+        services.AddScoped<IClipDownloader, YtDlpClipDownloader>();
 
         return services;
     }
