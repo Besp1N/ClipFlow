@@ -1,7 +1,7 @@
 using ClipFlow.Application.Common;
 using ClipFlow.Application.UseCases.Download;
 
-namespace ClipFlow.Console.CLI;
+namespace ClipFlow.Console.CLI.Commands;
 
 public class DownloadClipCommand(DownloadClipAsyncUseCase downloadClipAsync)
 {
