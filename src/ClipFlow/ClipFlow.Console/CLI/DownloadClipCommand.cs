@@ -9,8 +9,12 @@ public class DownloadClipCommand(DownloadClipAsyncUseCase downloadClipAsync)
     {
         if (args.Length < 2)
             return Result.Failure(ErrorType.Validation, "No URL provided for download-clip command.");
-        
-        var downloadClipRequest = new DownloadClipRequest(Url: args[1], OutputDirectory: "./downloads");
+
+        var outputDirIndex = Array.IndexOf(args, "output-dir");
+        if (outputDirIndex == -1 || outputDirIndex + 1 >= args.Length)
+            return Result.Failure(ErrorType.Validation, "No output directory provided for download-clip command.");
+
+        var downloadClipRequest = new DownloadClipRequest(Url: args[1], OutputDirectory: args[outputDirIndex + 1]);
 
         return await downloadClipAsync.ExecuteAsync(downloadClipRequest, cancellationToken);
     }

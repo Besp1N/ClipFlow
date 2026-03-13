@@ -79,3 +79,5 @@ Thumbs.db
 *.suo
 *.user
 
+src/ClipFlow/download/
+src/ClipFlow/downloads/
