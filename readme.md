@@ -1,4 +1,4 @@
-# ClipFlow
+# ClipFlow v_0.0.1
 
 ClipFlow is a .NET CLI application for working with short-form video clips:
 - downloading clips from a URL (currently via `yt-dlp`),
