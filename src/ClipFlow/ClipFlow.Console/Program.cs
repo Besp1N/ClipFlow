@@ -1,5 +1,6 @@
 ﻿using ClipFlow.Application.DependencyInjection;
 using ClipFlow.Console.CLI;
+using ClipFlow.Console.CLI.Commands;
 using ClipFlow.Console.CLI.Root;
 using ClipFlow.Infrastructure.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
@@ -39,6 +40,8 @@ builder.Logging.AddSerilog();
 
 builder.Services.AddScoped<CliRoot>();
 builder.Services.AddScoped<DownloadClipCommand>();
+builder.Services.AddSingleton<PresentMenuCommand>();
+builder.Services.AddScoped<UploadClipCommand>();
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);

@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipFlow.Infrastructure", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipFlow.Domain", "ClipFlow.Domain\ClipFlow.Domain.csproj", "{318984CC-C20B-41B1-B685-5672DC113182}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipFlow.Tests", "ClipFlow.Tests\ClipFlow.Tests.csproj", "{3FEF4856-22C6-43B4-8EA9-EBE884739AF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{318984CC-C20B-41B1-B685-5672DC113182}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{318984CC-C20B-41B1-B685-5672DC113182}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{318984CC-C20B-41B1-B685-5672DC113182}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FEF4856-22C6-43B4-8EA9-EBE884739AF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FEF4856-22C6-43B4-8EA9-EBE884739AF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FEF4856-22C6-43B4-8EA9-EBE884739AF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FEF4856-22C6-43B4-8EA9-EBE884739AF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

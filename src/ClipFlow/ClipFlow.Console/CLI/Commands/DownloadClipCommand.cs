@@ -1,7 +1,7 @@
 using ClipFlow.Application.Common;
 using ClipFlow.Application.UseCases.Download;
 
-namespace ClipFlow.Console.CLI;
+namespace ClipFlow.Console.CLI.Commands;
 
 public class DownloadClipCommand(DownloadClipAsyncUseCase downloadClipAsync)
 {
@@ -10,7 +10,7 @@ public class DownloadClipCommand(DownloadClipAsyncUseCase downloadClipAsync)
         if (args.Length < 2)
             return Result.Failure(ErrorType.Validation, "No URL provided for download-clip command.");
 
-        var outputDirIndex = Array.IndexOf(args, "output-dir");
+        var outputDirIndex = Array.IndexOf(args, "--output-dir");
         if (outputDirIndex == -1 || outputDirIndex + 1 >= args.Length)
             return Result.Failure(ErrorType.Validation, "No output directory provided for download-clip command.");
 

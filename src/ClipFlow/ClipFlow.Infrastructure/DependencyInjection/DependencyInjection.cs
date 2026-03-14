@@ -1,6 +1,7 @@
 using ClipFlow.Application.Abstractions.Download;
+using ClipFlow.Application.Abstractions.Upload;
 using ClipFlow.Infrastructure.Download;
-using ClipFlow.Infrastructure.Twitch;
+using ClipFlow.Infrastructure.Upload;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,22 +11,11 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
-        services
-            .AddOptions<TwitchOptions>()
-            .Bind(configuration.GetSection(TwitchOptions.SectionName))
-            .Validate(o =>
-                    !string.IsNullOrWhiteSpace(o.ClientId) &&
-                    !string.IsNullOrWhiteSpace(o.AccessToken),
-                "Twitch configuration is invalid. Required: Twitch:ClientId, Twitch:AccessToken.")
-            .ValidateOnStart();
-
-        services.AddHttpClient("Twitch", client =>
-        {
-            client.BaseAddress = new Uri("https://api.twitch.tv/helix/");
-        });
-
         services.AddSingleton<YtDlpCommandBuilder>();
         services.AddScoped<IClipDownloader, YtDlpClipDownloader>();
+
+        services.AddScoped<IClipUploader, TikTokClipUploader>();
+        services.AddScoped<IClipUploaderResolver, ClipUploaderResolver>();
 
         return services;
     }
