@@ -27,4 +27,8 @@
       <ProjectReference Include="..\ClipFlow.Infrastructure\ClipFlow.Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="ApplicationTests\UploadTests\" />
+    </ItemGroup>
+
 </Project>

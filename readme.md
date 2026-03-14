@@ -1,2 +1,2 @@
 # Example run command:
- dotnet run --project ClipFlow.Console -- download-clip "LINK" -- output-dir "DIRECTORY"
+ dotnet run --project ClipFlow.Console -- download-clip "LINK" --output-dir "DIRECTORY"
